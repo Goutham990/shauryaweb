@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup Form</title>
+  <link id="themeStylesheet" rel="stylesheet" href="light-theme.css">
+  <link rel="stylesheet" href="signup-form.css">
+</head>
+<body>
+  <h1>Signup Form for Sports Registration</h1>
+
+  <button id="themeSelectionBtn">Select Theme</button>
+
+  <div id="themeSelectionModal" class="modal">
+    <div class="modal-content">
+      <h2 style="text-align: center;" >Select Theme</h2>
+      <button id="lightThemeBtn">Light Theme</button>
+      <br>
+      <button id="darkThemeBtn">Dark Theme</button>
+    </div>
+  </div>
+
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Signup Form</h2>
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required minlength="5" pattern="[A-Za-z\s]+" placeholder="Enter your name (min. 5 characters, no numbers)">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@gmail.com$" placeholder="Enter a Gmail address">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required minlength="8" placeholder="Enter a password (min. 8 characters)">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Enter a 10-digit phone number">
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Others</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="sports">Sports Interests:</label>
+          <select id="sports" name="sports[]" multiple required>
+            <option value="football">Football</option>
+            <option value="basketball">Basketball</option>
+            <option value="tennis">Tennis</option>
+            <option value="cricket">Cricket</option>
+            <option value="swimming">Swimming</option>
+          </select>
+        </div>
+
+        <button type="submit">Signup</button>
+      </form>
+
+      <div id="userCounter">Registered Users: 0</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
